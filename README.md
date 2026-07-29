@@ -4,6 +4,17 @@ A modern, high-performance web application for SEO consultants, analysts, and di
 
 ---
 
+## 🔗 Developer Attribution & Social Media
+
+I have updated the social media links in the footer:
+
+- **LinkedIn**: https://linkedin.com/in/habeebrahmanb
+- **X (Twitter)**: https://x.com/habeebrahmanb
+- **GitHub**: https://github.com/habeebrahmanb
+- **Developed by**: `<a id="bf-seo-dev-link" href="https://www.bestfreelanceseo.com" rel="dofollow">Best Freelance SEO</a>`
+
+---
+
 ## ✨ Features
 
 - **Hero Section**: Eye-catching presentation with dynamic stats, key performance metrics, and call-to-action buttons.
@@ -13,7 +24,7 @@ A modern, high-performance web application for SEO consultants, analysts, and di
 - **Blog Section**: Informative industry insights, guides, and SEO best practices.
 - **Contact & Booking System**: Full-featured contact form with service selection and direct booking options.
 - **WhatsApp Integration**: Floating WhatsApp widget for fast client communication.
-- **Responsive & Dynamic Design**: Polished dark theme layout with smooth glassmorphism effects and animations.
+- **Responsive & Dynamic Design**: Polished design system featuring `#FFFFFF`, `#F4F5F6`, `#02E3A7`, `#13144D`, and `#6AF15C`.
 
 ---
 
