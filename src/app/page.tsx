@@ -14,12 +14,12 @@ export default function Home() {
       {/* Fixed Sticky Header */}
       <Header />
 
-      {/* Main Single Page Sections */}
+      {/* Main Multi-Page Portal Home View */}
       <main className="flex-grow">
         {/* Hero & Real-time Audit Checker */}
         <HeroSection />
 
-        {/* Services & Deliverables Inspector */}
+        {/* Services Showcase */}
         <ServicesSection />
 
         {/* Verifiable Case Studies & Ranking Growth */}
@@ -28,7 +28,7 @@ export default function Home() {
         {/* Interactive SEO ROI & Revenue Calculator */}
         <AuditCalculator />
 
-        {/* SEO Guides & Knowledge Base Modal Reader */}
+        {/* SEO Guides & Knowledge Base */}
         <BlogSection />
 
         {/* Inquiry Form & Consultation Booking */}

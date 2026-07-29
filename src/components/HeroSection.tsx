@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { 
   TrendingUp, 
   Search, 
@@ -14,9 +15,7 @@ import {
   ShieldAlert,
   ShieldCheck,
   Loader2,
-  Sparkles,
-  DollarSign,
-  Users
+  Sparkles
 } from 'lucide-react';
 
 export function HeroSection() {
@@ -54,16 +53,16 @@ export function HeroSection() {
 
   const metrics = [
     { value: '$10.2B+', label: 'Client Revenue Driven', sub: 'Verified across 1,000+ campaigns' },
-    { value: '7.8M+', label: 'Qualified Leads Generated', sub: 'High-intent B2B & B2C inquiries' },
-    { value: '98.4%', label: 'Client Retention Rate', sub: 'Industry-leading satisfaction' },
-    { value: '785+', label: 'Digital Growth Specialists', sub: 'Tech-enabled execution team' },
+    { value: '7.8M+', label: 'Qualified Leads Generated', sub: 'High-intent B2B & B2C search queries' },
+    { value: '98.4%', label: 'Client Retention Rate', sub: 'Executive-level satisfaction' },
+    { value: '785+', label: 'Digital Growth Campaigns', sub: 'Multi-industry success' },
   ];
 
   return (
-    <section id="hero" className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-grid-pattern bg-white">
-      {/* Ambient background glow spheres */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-emerald-500/10 rounded-full blur-[150px] pointer-events-none"></div>
-      <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-emerald-600/5 rounded-full blur-[130px] pointer-events-none"></div>
+    <section id="hero" className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-grid-pattern bg-[#F4F5F6] text-[#13144D]">
+      {/* Glow Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-[#02E3A7]/10 rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-[#6AF15C]/15 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -71,49 +70,49 @@ export function HeroSection() {
           {/* Left Column: Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold tracking-wide uppercase mb-6 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600 animate-spin" style={{ animationDuration: '4s' }} />
-              Enterprise SEO Technology & Custom Organic Strategy
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#13144D] text-[#02E3A7] border border-[#02E3A7]/30 text-xs font-extrabold tracking-wide uppercase mb-6 shadow-md">
+              <Sparkles className="w-3.5 h-3.5 text-[#6AF15C] animate-spin" style={{ animationDuration: '4s' }} />
+              Enterprise Search Engineering & Revenue Strategy
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#13144D] tracking-tight leading-[1.15] mb-6">
               Drive Predictable Revenue With{' '}
-              <span className="gradient-text-emerald">Tech-Enabled SEO</span> & Content Growth.
+              <span className="gradient-text-emerald">Precision Organic SEO</span> & Strategic Architecture.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed mb-8 max-w-2xl">
-              Turn organic search intent into trackable bottom-line sales. Custom technical audits and data-driven organic campaigns built for high-growth brands.
+            <p className="text-lg sm:text-xl text-[#13144D]/80 font-normal leading-relaxed mb-8 max-w-2xl">
+              Turn organic search intent into trackable bottom-line sales. Custom technical audits, full-page SILO architectures, and data-driven organic campaigns built for high-growth brands.
             </p>
 
             {/* Quick Proposal Input Bar */}
             <div className="w-full max-w-xl mb-8">
-              <form onSubmit={handleRunAudit} className="flex flex-col sm:flex-row gap-3 p-2 rounded-2xl bg-white border border-slate-200 shadow-xl">
+              <form onSubmit={handleRunAudit} className="flex flex-col sm:flex-row gap-3 p-2 rounded-2xl bg-[#FFFFFF] border border-[#13144D]/15 shadow-xl">
                 <div className="relative flex-1">
-                  <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-emerald-600" />
+                  <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#02E3A7]" />
                   <input
                     type="url"
                     required
                     placeholder="Enter your website URL (e.g. https://yourbrand.com)"
                     value={auditUrl}
                     onChange={(e) => setAuditUrl(e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all"
+                    className="w-full pl-11 pr-4 py-3 rounded-xl bg-[#F4F5F6] border border-[#13144D]/10 text-[#13144D] placeholder-[#13144D]/50 text-sm focus:outline-none focus:border-[#02E3A7] transition-all"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isAuditing}
-                  className="btn-pro-green px-6 py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 whitespace-nowrap"
+                  className="btn-pro-green px-6 py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 whitespace-nowrap text-[#13144D]"
                 >
                   {isAuditing ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin text-white" />
+                      <Loader2 className="w-4 h-4 animate-spin text-[#13144D]" />
                       Analyzing Site...
                     </>
                   ) : (
                     <>
-                      Send Me Proposal <ArrowRight className="w-4 h-4 text-white" />
+                      Audit Site <ArrowRight className="w-4 h-4 text-[#13144D]" />
                     </>
                   )}
                 </button>
@@ -121,54 +120,54 @@ export function HeroSection() {
 
               {/* Instant Audit Result Card */}
               {auditResult && (
-                <div className="mt-4 p-5 rounded-2xl bg-white border border-emerald-200 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
-                  <div className="flex items-center justify-between mb-3 border-b border-slate-100 pb-3">
+                <div className="mt-4 p-5 rounded-2xl bg-[#FFFFFF] border border-[#02E3A7] shadow-2xl animate-in fade-in slide-in-from-top-4 duration-300">
+                  <div className="flex items-center justify-between mb-3 border-b border-[#13144D]/10 pb-3">
                     <div className="flex items-center gap-2">
-                      <Zap className="w-5 h-5 text-emerald-600" />
-                      <span className="text-sm font-bold text-slate-900">SEO Revenue Audit Snapshot</span>
+                      <Zap className="w-5 h-5 text-[#02E3A7]" />
+                      <span className="text-sm font-bold text-[#13144D]">SEO Revenue Audit Snapshot</span>
                     </div>
-                    <div className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold border border-emerald-300">
+                    <div className="px-3 py-1 rounded-full bg-[#13144D] text-[#02E3A7] text-xs font-extrabold">
                       Health Score: {auditResult.score}/100
                     </div>
                   </div>
                   <div className="grid grid-cols-3 gap-2 mb-3 text-xs">
-                    <div className="p-2.5 rounded-lg bg-slate-50 text-slate-700 border border-slate-200">
-                      <span className="text-slate-500 block text-[10px]">Page Speed:</span>
-                      <span className="font-bold text-emerald-600">{auditResult.speed}</span>
+                    <div className="p-2.5 rounded-lg bg-[#F4F5F6] text-[#13144D] border border-[#13144D]/10">
+                      <span className="text-[#13144D]/60 block text-[10px]">Page Speed:</span>
+                      <span className="font-bold text-[#02E3A7]">{auditResult.speed}</span>
                     </div>
-                    <div className="p-2.5 rounded-lg bg-slate-50 text-slate-700 border border-slate-200">
-                      <span className="text-slate-500 block text-[10px]">Keywords Found:</span>
-                      <span className="font-bold text-slate-900">{auditResult.keywordsFound}+</span>
+                    <div className="p-2.5 rounded-lg bg-[#F4F5F6] text-[#13144D] border border-[#13144D]/10">
+                      <span className="text-[#13144D]/60 block text-[10px]">Keywords Found:</span>
+                      <span className="font-bold text-[#13144D]">{auditResult.keywordsFound}+</span>
                     </div>
-                    <div className="p-2.5 rounded-lg bg-slate-50 text-slate-700 border border-slate-200">
-                      <span className="text-slate-500 block text-[10px]">Est. ROI Boost:</span>
-                      <span className="font-bold text-emerald-600">{auditResult.estRevenueBoost}</span>
+                    <div className="p-2.5 rounded-lg bg-[#F4F5F6] text-[#13144D] border border-[#13144D]/10">
+                      <span className="text-[#13144D]/60 block text-[10px]">Est. ROI Boost:</span>
+                      <span className="font-bold text-[#02E3A7]">{auditResult.estRevenueBoost}</span>
                     </div>
                   </div>
-                  <div className="text-xs text-slate-700">
-                    <span className="font-bold text-emerald-700 flex items-center gap-1 mb-1">
-                      <ShieldAlert className="w-3.5 h-3.5" /> High-Priority Revenue Blockers Identified:
+                  <div className="text-xs text-[#13144D]">
+                    <span className="font-bold text-[#13144D] flex items-center gap-1 mb-1">
+                      <ShieldAlert className="w-3.5 h-3.5 text-[#02E3A7]" /> Priority Revenue Blockers Identified:
                     </span>
-                    <ul className="list-disc list-inside space-y-1 text-slate-600 pl-1">
+                    <ul className="list-disc list-inside space-y-1 text-[#13144D]/80 pl-1">
                       {auditResult.issues.map((issue, idx) => (
                         <li key={idx}>{issue}</li>
                       ))}
                     </ul>
                   </div>
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex justify-end">
-                    <a
-                      href="#contact"
-                      className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 hover:underline"
+                  <div className="mt-4 pt-3 border-t border-[#13144D]/10 flex justify-end">
+                    <Link
+                      href="/audit"
+                      className="text-xs font-bold text-[#13144D] hover:text-[#02E3A7] underline flex items-center gap-1"
                     >
-                      Get Custom 25-Page Growth & Revenue Plan &rarr;
-                    </a>
+                      Open Full Interactive Audit Tool &rarr;
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
 
             {/* Social Proof Badges */}
-            <div className="flex flex-wrap items-center gap-6 text-xs text-slate-500 border-t border-slate-200 pt-6">
+            <div className="flex flex-wrap items-center gap-6 text-xs text-[#13144D]/70 border-t border-[#13144D]/15 pt-6">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
                   <img className="w-7 h-7 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80" alt="Client Avatar" />
@@ -176,35 +175,35 @@ export function HeroSection() {
                   <img className="w-7 h-7 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&auto=format&fit=crop&q=80" alt="Client Avatar" />
                 </div>
                 <div className="flex flex-col">
-                  <div className="flex text-emerald-500">
+                  <div className="flex text-[#02E3A7]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 fill-emerald-500" />
+                      <Star key={i} className="w-3 h-3 fill-[#02E3A7]" />
                     ))}
                   </div>
-                  <span className="text-[11px] text-slate-700 font-semibold">4.9/5 Rating Across 500+ Client Reviews</span>
+                  <span className="text-[11px] text-[#13144D] font-bold">4.9/5 Rating Across 500+ Verified Audits</span>
                 </div>
               </div>
-              <div className="h-4 w-px bg-slate-200"></div>
-              <div className="flex items-center gap-2 font-medium text-slate-700">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Premier Google & Meta Certified Partner</span>
+              <div className="h-4 w-px bg-[#13144D]/20"></div>
+              <div className="flex items-center gap-2 font-semibold text-[#13144D]">
+                <ShieldCheck className="w-4 h-4 text-[#02E3A7]" />
+                <span>Premier Google Search & Analytics Partner</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Visual Dashboard Widget Preview */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl bg-white p-6 border border-slate-200 shadow-2xl shadow-slate-200/60 backdrop-blur-xl">
+            <div className="relative rounded-3xl bg-[#13144D] p-6 text-[#FFFFFF] shadow-2xl backdrop-blur-xl border border-[#02E3A7]/30">
               
               {/* Header Bar of Card */}
-              <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+              <div className="flex items-center justify-between border-b border-[#02E3A7]/20 pb-4 mb-5">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
                   <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                  <span className="text-xs font-mono text-slate-500 ml-2">organic_growth_live.dashboard</span>
+                  <div className="w-3 h-3 rounded-full bg-[#02E3A7]"></div>
+                  <span className="text-xs font-mono text-[#F4F5F6]/70 ml-2">organic_growth_live.dashboard</span>
                 </div>
-                <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-[#02E3A7]/20 text-[#02E3A7] border border-[#02E3A7]/40">
                   LIVE REVENUE ENGINE™
                 </span>
               </div>
@@ -213,75 +212,72 @@ export function HeroSection() {
               <div className="mb-6">
                 <div className="flex items-baseline justify-between mb-2">
                   <div>
-                    <span className="text-xs text-slate-500 block font-medium">Organic Client Revenue (YTD)</span>
-                    <span className="text-3xl font-black text-slate-900">$2,458,900</span>
+                    <span className="text-xs text-[#F4F5F6]/70 block font-medium">Organic Client Revenue (YTD)</span>
+                    <span className="text-3xl font-black text-[#FFFFFF]">$2,458,900</span>
                   </div>
-                  <div className="flex items-center gap-1 text-emerald-700 text-xs font-bold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600" /> +412.5% YoY
+                  <div className="flex items-center gap-1 text-[#13144D] text-xs font-bold bg-[#02E3A7] px-2.5 py-1 rounded-full">
+                    <TrendingUp className="w-3.5 h-3.5 text-[#13144D]" /> +412.5% YoY
                   </div>
                 </div>
 
-                {/* SVG Emerald Green Trend Graph */}
+                {/* SVG Teal Trend Graph */}
                 <div className="h-36 w-full pt-2">
                   <svg className="w-full h-full" viewBox="0 0 300 100" preserveAspectRatio="none">
                     <defs>
-                      <linearGradient id="gradient-emerald-chart" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
+                      <linearGradient id="gradient-teal-chart" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#02E3A7" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="#02E3A7" stopOpacity="0.0" />
                       </linearGradient>
                     </defs>
-                    {/* Area under curve */}
                     <path
                       d="M 0,90 Q 50,70 100,55 T 200,25 T 300,8 L 300,100 L 0,100 Z"
-                      fill="url(#gradient-emerald-chart)"
+                      fill="url(#gradient-teal-chart)"
                     />
-                    {/* Line path */}
                     <path
                       d="M 0,90 Q 50,70 100,55 T 200,25 T 300,8"
                       fill="none"
-                      stroke="#059669"
+                      stroke="#02E3A7"
                       strokeWidth="3.5"
                       strokeLinecap="round"
                     />
-                    {/* Pulsing Green Dots */}
-                    <circle cx="300" cy="8" r="6" fill="#10b981" className="animate-ping" />
-                    <circle cx="300" cy="8" r="4" fill="#059669" />
+                    <circle cx="300" cy="8" r="6" fill="#6AF15C" className="animate-ping" />
+                    <circle cx="300" cy="8" r="4" fill="#02E3A7" />
                   </svg>
                 </div>
               </div>
 
               {/* Keyword Ranking Pulse Feed */}
               <div className="space-y-2.5">
-                <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-bold text-[#F4F5F6] uppercase tracking-wider block mb-1">
                   High Commercial Intent Keyword Positions
                 </span>
                 
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#0d0e38] border border-[#02E3A7]/20 text-xs">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                    <span className="font-semibold text-slate-800">"enterprise ecommerce SEO agency"</span>
+                    <div className="w-2 h-2 rounded-full bg-[#02E3A7]"></div>
+                    <span className="font-semibold text-[#FFFFFF]">"enterprise ecommerce SEO agency"</span>
                   </div>
-                  <span className="font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">
+                  <span className="font-extrabold text-[#13144D] bg-[#02E3A7] px-2 py-0.5 rounded">
                     #1 Rank
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#0d0e38] border border-[#02E3A7]/20 text-xs">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                    <span className="font-semibold text-slate-800">"custom SEO audit services"</span>
+                    <div className="w-2 h-2 rounded-full bg-[#02E3A7]"></div>
+                    <span className="font-semibold text-[#FFFFFF]">"custom SEO audit services"</span>
                   </div>
-                  <span className="font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">
+                  <span className="font-extrabold text-[#13144D] bg-[#02E3A7] px-2 py-0.5 rounded">
                     #1 Rank
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#0d0e38] border border-[#02E3A7]/20 text-xs">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                    <span className="font-semibold text-slate-800">"organic lead generation strategy"</span>
+                    <div className="w-2 h-2 rounded-full bg-[#6AF15C]"></div>
+                    <span className="font-semibold text-[#FFFFFF]">"organic lead generation strategy"</span>
                   </div>
-                  <span className="font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">
+                  <span className="font-extrabold text-[#13144D] bg-[#6AF15C] px-2 py-0.5 rounded">
                     #2 Rank
                   </span>
                 </div>
@@ -289,13 +285,13 @@ export function HeroSection() {
             </div>
 
             {/* Floating Achievement Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-white border border-slate-200 p-4 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md hidden sm:flex">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-200 flex items-center justify-center">
-                <Award className="w-5 h-5 text-emerald-600" />
+            <div className="absolute -bottom-6 -left-6 bg-[#FFFFFF] border border-[#13144D]/15 p-4 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md hidden sm:flex text-[#13144D]">
+              <div className="w-10 h-10 rounded-xl bg-[#13144D] flex items-center justify-center">
+                <Award className="w-5 h-5 text-[#02E3A7]" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-slate-900">#1 Rated Growth Agency</span>
-                <span className="block text-[11px] text-slate-500">Verified Results & Direct ROI</span>
+                <span className="block text-xs font-extrabold text-[#13144D]">#1 Rated Organic Specialist</span>
+                <span className="block text-[11px] text-[#13144D]/70">Verified Results & Direct ROI</span>
               </div>
             </div>
 
@@ -308,13 +304,13 @@ export function HeroSection() {
           {metrics.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-white hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-300 transition-all duration-300 flex flex-col group shadow-sm hover:shadow-md"
+              className="p-6 rounded-2xl bg-[#FFFFFF] hover:bg-[#F4F5F6] border border-[#13144D]/15 transition-all duration-300 flex flex-col group shadow-md hover:shadow-xl hover:border-[#02E3A7]"
             >
-              <span className="text-3xl sm:text-4xl font-black gradient-text-emerald mb-2 group-hover:scale-105 transition-transform duration-300">
+              <span className="text-3xl sm:text-4xl font-black text-[#13144D] mb-2 group-hover:scale-105 transition-transform duration-300">
                 {item.value}
               </span>
-              <span className="text-sm font-bold text-slate-900 mb-1">{item.label}</span>
-              <span className="text-xs text-slate-500">{item.sub}</span>
+              <span className="text-sm font-bold text-[#13144D] mb-1">{item.label}</span>
+              <span className="text-xs text-[#13144D]/70">{item.sub}</span>
             </div>
           ))}
         </div>

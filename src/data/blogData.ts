@@ -1,3 +1,16 @@
+export interface BlogPostSection {
+  heading: string;
+  body: string;
+  bulletPoints?: string[];
+  proTip?: string;
+  codeSnippet?: string;
+}
+
+export interface BlogPostFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -6,21 +19,21 @@ export interface BlogPost {
   category: 'Technical SEO' | 'Algorithm Updates' | 'Link Building' | 'On-Page SEO' | 'Local SEO';
   publishDate: string;
   readTime: string;
+  tags: string[];
   author: {
     name: string;
     role: string;
     avatar: string;
+    bio: string;
   };
   content: {
     intro: string;
-    sections: {
-      heading: string;
-      body: string;
-      bulletPoints?: string[];
-      proTip?: string;
-    }[];
+    sections: BlogPostSection[];
     conclusion: string;
   };
+  keyTakeaways: string[];
+  faqs?: BlogPostFAQ[];
+  relatedSlugs: string[];
   featuredTag?: string;
 }
 
@@ -33,12 +46,30 @@ export const BLOG_DATA: BlogPost[] = [
     category: "Algorithm Updates",
     publishDate: "July 18, 2026",
     readTime: "8 min read",
+    tags: ["Google Core Update", "E-E-A-T", "Helpful Content", "SEO Audit", "Traffic Recovery"],
     author: {
       name: "SEO Analyst",
-      role: "Lead SEO Strategist",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+      role: "Lead Technical SEO Strategist",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      bio: "Senior Technical SEO Consultant specializing in Core Web Vitals, enterprise site architecture, and algorithm recovery strategies."
     },
     featuredTag: "Must Read",
+    keyTakeaways: [
+      "Isolate traffic drops using GSC date range comparisons before deleting or modifying content.",
+      "Google penalizes generic AI content that lacks first-hand testing or unique human experience.",
+      "Pruning thin content and establishing Person schema restores site-wide domain quality scores."
+    ],
+    faqs: [
+      {
+        question: "How long after fixing content will my site recover from a Core Update?",
+        answer: "Recovery typically occurs during subsequent Core Update refresh cycles or incremental quality evaluations, which can take anywhere from 4 weeks to 3 months."
+      },
+      {
+        question: "Should I disavow links after a traffic drop?",
+        answer: "Only disavow links if you received an explicit GSC Manual Action for unnatural inbound links or conducted a toxic backlink audit showing obvious spam campaigns."
+      }
+    ],
+    relatedSlugs: ["advanced-schema-markup-rich-snippets", "entity-based-keyword-research-guide"],
     content: {
       intro: "When a Google Core Update strikes, traffic spikes or plummets overnight. Understanding how Google's quality evaluator guidelines measure Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T) is vital to diagnosing rank drops.",
       sections: [
@@ -77,12 +108,20 @@ export const BLOG_DATA: BlogPost[] = [
     category: "Technical SEO",
     publishDate: "July 02, 2026",
     readTime: "6 min read",
+    tags: ["JSON-LD", "Schema Markup", "Rich Snippets", "Technical SEO", "SERP CTR"],
     author: {
       name: "SEO Analyst",
-      role: "Lead SEO Strategist",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+      role: "Lead Technical SEO Strategist",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      bio: "Senior Technical SEO Consultant specializing in Core Web Vitals, enterprise site architecture, and algorithm recovery strategies."
     },
     featuredTag: "Technical",
+    keyTakeaways: [
+      "JSON-LD structured data is the preferred format for Google Search engines.",
+      "Nested schema tags link entity relationships between products, authors, and organizations.",
+      "Rich snippets can elevate Organic CTR by 20% to 35% without changing your ranking position."
+    ],
+    relatedSlugs: ["google-core-update-recovery-blueprint", "entity-based-keyword-research-guide"],
     content: {
       intro: "Structured data is the universal translator between your website code and Google's Search algorithm. Implementing valid JSON-LD schema unlocks rich result features that dramatically elevate Click-Through Rates (CTR).",
       sections: [
@@ -113,11 +152,19 @@ export const BLOG_DATA: BlogPost[] = [
     category: "On-Page SEO",
     publishDate: "June 24, 2026",
     readTime: "7 min read",
+    tags: ["Entity SEO", "Semantic Search", "Knowledge Graph", "On-Page SEO", "Topical Authority"],
     author: {
       name: "SEO Analyst",
-      role: "Lead SEO Strategist",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+      role: "Lead Technical SEO Strategist",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      bio: "Senior Technical SEO Consultant specializing in Core Web Vitals, enterprise site architecture, and algorithm recovery strategies."
     },
+    keyTakeaways: [
+      "Google evaluates search queries as real-world entities rather than isolated text strings.",
+      "Building complete topical SILO clusters establishes long-term domain authority.",
+      "NLP TF-IDF analysis ensures your content covers required parent and child subtopics."
+    ],
+    relatedSlugs: ["google-core-update-recovery-blueprint", "local-map-pack-domination-strategy"],
     content: {
       intro: "Modern search engines do not read web pages as isolated collections of words. Instead, algorithms break down text into recognized entities—people, places, concepts, and things—and analyze how comprehensively a website covers a topic.",
       sections: [
@@ -146,11 +193,19 @@ export const BLOG_DATA: BlogPost[] = [
     category: "Local SEO",
     publishDate: "June 10, 2026",
     readTime: "5 min read",
+    tags: ["Local SEO", "Google Map Pack", "GBP Optimization", "Local Citations", "Review Acquisition"],
     author: {
       name: "SEO Analyst",
-      role: "Lead SEO Strategist",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+      role: "Lead Technical SEO Strategist",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      bio: "Senior Technical SEO Consultant specializing in Core Web Vitals, enterprise site architecture, and algorithm recovery strategies."
     },
+    keyTakeaways: [
+      "Over 46% of all Google searches carry local intent.",
+      "Optimizing your primary GBP category and NAP consistency drives local map pack positioning.",
+      "Automated review acquisition workflows provide steady social proof signals to Google Maps."
+    ],
+    relatedSlugs: ["entity-based-keyword-research-guide", "advanced-schema-markup-rich-snippets"],
     content: {
       intro: "Over 46% of all Google searches have local intent. For service businesses, securing a spot in the local 3-Pack generates higher conversion rates than standard organic listings.",
       sections: [
@@ -164,7 +219,7 @@ export const BLOG_DATA: BlogPost[] = [
           ]
         }
       ],
-      conclusion: "Combining a optimized Google Business Profile with localized website content guarantees a dominant presence in local search results."
+      conclusion: "Combining an optimized Google Business Profile with localized website content guarantees a dominant presence in local search results."
     }
   }
 ];

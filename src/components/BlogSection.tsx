@@ -1,38 +1,46 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { BLOG_DATA, BlogPost } from '@/data/blogData';
 import { 
   BookOpen, 
   Clock, 
   ArrowRight, 
   X, 
-  Share2, 
-  Sparkles,
-  CheckCircle,
-  Lightbulb
+  CheckCircle, 
+  Lightbulb,
+  ArrowUpRight
 } from 'lucide-react';
 
 export function BlogSection() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   return (
-    <section id="blog" className="py-24 relative bg-slate-50 border-b border-slate-200">
+    <section id="blog" className="py-24 relative bg-[#F4F5F6] border-b border-[#13144D]/15 text-[#13144D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
-              <BookOpen className="w-3.5 h-3.5 text-emerald-600" /> SEO Insights & Growth Engineering
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#13144D] text-[#02E3A7] border border-[#02E3A7]/30 text-xs font-extrabold uppercase tracking-wider mb-4">
+              <BookOpen className="w-3.5 h-3.5 text-[#02E3A7]" /> SEO Engineering Knowledge Base
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Latest <span className="gradient-text-emerald">Search Engine Growth</span> Guides
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#13144D] tracking-tight">
+              Latest <span className="gradient-text-vibrant">Search Engine Growth</span> Guides
             </h2>
           </div>
-          <p className="text-sm text-slate-600 max-w-md">
-            In-depth teardowns on algorithm updates, technical indexability, JSON-LD schema, and semantic entity optimization.
-          </p>
+          <div className="flex flex-col items-start md:items-end gap-3">
+            <p className="text-sm text-[#13144D]/80 max-w-md">
+              In-depth teardowns on algorithm updates, technical indexability, JSON-LD schema, and semantic entity optimization.
+            </p>
+            <Link
+              href="/blog"
+              className="text-xs font-bold text-[#13144D] hover:text-[#02E3A7] flex items-center gap-1 underline"
+            >
+              Browse All Blog Guides &rarr;
+            </Link>
+          </div>
         </div>
 
         {/* Blog Posts Grid */}
@@ -40,49 +48,59 @@ export function BlogSection() {
           {BLOG_DATA.map((post) => (
             <article
               key={post.id}
-              className="rounded-3xl bg-white border border-slate-200 hover:border-emerald-300 p-6 flex flex-col justify-between group cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md"
-              onClick={() => setSelectedPost(post)}
+              className="rounded-3xl bg-[#FFFFFF] border border-[#13144D]/15 hover:border-[#02E3A7] p-6 flex flex-col justify-between group transition-all duration-300 shadow-md hover:shadow-xl"
             >
               <div>
                 {/* Meta Bar */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#13144D] text-[#02E3A7]">
                     {post.category}
                   </span>
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                    <Clock className="w-3.5 h-3.5 text-emerald-600" />
+                  <div className="flex items-center gap-1.5 text-xs text-[#13144D]/70">
+                    <Clock className="w-3.5 h-3.5 text-[#02E3A7]" />
                     <span>{post.readTime}</span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug mb-3">
+                <h3 className="text-lg font-bold text-[#13144D] group-hover:text-[#02E3A7] transition-colors leading-snug mb-3">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-xs text-slate-600 line-clamp-3 mb-6 leading-relaxed">
+                <p className="text-xs text-[#13144D]/80 line-clamp-3 mb-6 leading-relaxed">
                   {post.excerpt}
                 </p>
               </div>
 
               {/* Author & Read Link */}
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div className="pt-4 border-t border-[#13144D]/15 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
                   <img
                     src={post.author.avatar}
                     alt={post.author.name}
-                    className="w-7 h-7 rounded-full object-cover border border-emerald-200"
+                    className="w-7 h-7 rounded-full object-cover border border-[#13144D]/20"
                   />
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold text-slate-800">{post.author.name}</span>
-                    <span className="text-[10px] text-slate-500">{post.publishDate}</span>
+                    <span className="text-xs font-bold text-[#13144D]">{post.author.name}</span>
+                    <span className="text-[10px] text-[#13144D]/60">{post.publishDate}</span>
                   </div>
                 </div>
 
-                <span className="text-xs font-bold text-emerald-600 group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                  Read Article &rarr;
-                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setSelectedPost(post)}
+                    className="text-[11px] font-semibold text-[#13144D]/70 hover:text-[#13144D] underline"
+                  >
+                    Quick View
+                  </button>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="text-xs font-bold text-[#13144D] hover:text-[#02E3A7] flex items-center gap-1"
+                  >
+                    Read Guide &rarr;
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
@@ -90,56 +108,56 @@ export function BlogSection() {
 
         {/* Interactive Reader Modal Overlay */}
         {selectedPost && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="bg-white border border-slate-200 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 shadow-2xl relative">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#13144D]/70 backdrop-blur-md animate-in fade-in duration-200">
+            <div className="bg-[#FFFFFF] border border-[#02E3A7]/30 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 shadow-2xl relative text-[#13144D]">
               
               {/* Close Button */}
               <button
                 onClick={() => setSelectedPost(null)}
-                className="absolute top-6 right-6 p-2.5 rounded-full bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors"
+                className="absolute top-6 right-6 p-2.5 rounded-full bg-[#F4F5F6] text-[#13144D] hover:bg-[#13144D] hover:text-[#02E3A7] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex items-center gap-3 mb-4">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-[#13144D] text-[#02E3A7]">
                   {selectedPost.category}
                 </span>
-                <span className="text-xs text-slate-500 font-semibold">{selectedPost.readTime}</span>
+                <span className="text-xs text-[#13144D]/70 font-semibold">{selectedPost.readTime}</span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-[#13144D] mb-4 leading-tight">
                 {selectedPost.title}
               </h2>
 
-              <div className="flex items-center gap-3 border-b border-slate-100 pb-6 mb-6">
+              <div className="flex items-center gap-3 border-b border-[#13144D]/15 pb-6 mb-6">
                 <img
                   src={selectedPost.author.avatar}
                   alt={selectedPost.author.name}
-                  className="w-10 h-10 rounded-full border border-emerald-200"
+                  className="w-10 h-10 rounded-full border border-[#13144D]/20"
                 />
                 <div>
-                  <span className="block text-sm font-bold text-slate-900">{selectedPost.author.name}</span>
-                  <span className="block text-xs text-slate-500">{selectedPost.author.role}</span>
+                  <span className="block text-sm font-bold text-[#13144D]">{selectedPost.author.name}</span>
+                  <span className="block text-xs text-[#13144D]/70">{selectedPost.author.role}</span>
                 </div>
               </div>
 
               {/* Article Content */}
-              <div className="space-y-6 text-sm text-slate-700 leading-relaxed mb-8">
-                <p className="text-base text-slate-800 font-medium italic border-l-2 border-emerald-500 pl-4 py-1">
+              <div className="space-y-6 text-sm text-[#13144D] leading-relaxed mb-8">
+                <p className="text-base text-[#13144D] font-medium italic border-l-2 border-[#02E3A7] pl-4 py-1 bg-[#F4F5F6] rounded-r-xl">
                   {selectedPost.content.intro}
                 </p>
 
                 {selectedPost.content.sections.map((sec, idx) => (
                   <div key={idx} className="space-y-3">
-                    <h3 className="text-lg font-bold text-slate-900">{sec.heading}</h3>
-                    <p className="text-slate-700">{sec.body}</p>
+                    <h3 className="text-lg font-bold text-[#13144D]">{sec.heading}</h3>
+                    <p className="text-[#13144D]/90">{sec.body}</p>
 
                     {sec.bulletPoints && (
                       <ul className="space-y-2 mt-2">
                         {sec.bulletPoints.map((point, pIdx) => (
-                          <li key={pIdx} className="flex items-start gap-2 text-xs text-slate-700">
-                            <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                          <li key={pIdx} className="flex items-start gap-2 text-xs text-[#13144D]">
+                            <CheckCircle className="w-4 h-4 text-[#02E3A7] shrink-0 mt-0.5" />
                             <span>{point}</span>
                           </li>
                         ))}
@@ -147,11 +165,11 @@ export function BlogSection() {
                     )}
 
                     {sec.proTip && (
-                      <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-3 mt-3">
-                        <Lightbulb className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <div className="p-4 rounded-xl bg-[#F4F5F6] border border-[#02E3A7]/30 flex items-start gap-3 mt-3">
+                        <Lightbulb className="w-5 h-5 text-[#02E3A7] shrink-0 mt-0.5" />
                         <div>
-                          <span className="block text-xs font-bold text-emerald-800">Pro-Tip Strategy:</span>
-                          <span className="text-xs text-slate-700">{sec.proTip}</span>
+                          <span className="block text-xs font-bold text-[#13144D]">Pro-Tip Strategy:</span>
+                          <span className="text-xs text-[#13144D]/90">{sec.proTip}</span>
                         </div>
                       </div>
                     )}
@@ -159,18 +177,25 @@ export function BlogSection() {
                 ))}
 
                 {/* Conclusion */}
-                <div className="pt-6 border-t border-slate-100">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Final Takeaway</h3>
-                  <p className="text-slate-700">{selectedPost.content.conclusion}</p>
+                <div className="pt-6 border-t border-[#13144D]/15">
+                  <h3 className="text-lg font-bold text-[#13144D] mb-2">Final Takeaway</h3>
+                  <p className="text-[#13144D]/90">{selectedPost.content.conclusion}</p>
                 </div>
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
+              <div className="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-[#13144D]/15">
+                <Link
+                  href={`/blog/${selectedPost.slug}`}
+                  onClick={() => setSelectedPost(null)}
+                  className="btn-pro-green px-6 py-3 rounded-xl font-extrabold text-[#13144D] text-xs flex items-center justify-center gap-1.5"
+                >
+                  Open Full Post Page <ArrowUpRight className="w-4 h-4" />
+                </Link>
                 <button
                   onClick={() => setSelectedPost(null)}
-                  className="px-6 py-3 rounded-xl font-bold bg-slate-100 border border-slate-200 text-slate-700 text-xs hover:bg-slate-200 transition-colors"
+                  className="px-6 py-3 rounded-xl font-bold bg-[#F4F5F6] border border-[#13144D]/20 text-[#13144D] text-xs hover:bg-[#13144D] hover:text-[#02E3A7] transition-colors"
                 >
-                  Close Article
+                  Close Window
                 </button>
               </div>
 
