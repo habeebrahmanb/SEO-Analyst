@@ -4,14 +4,16 @@ A modern, high-performance web application for SEO consultants, analysts, and di
 
 ---
 
-## 🔗 Developer Attribution & Social Media
+## 👤 Developer & Attribution
 
-I have updated the social media links in the footer:
+**HABEEB RAHMAN**  
+[Best Freelance SEO](https://www.bestfreelanceseo.com/?utm_source=google&utm_medium=referral&utm_campaign=chrome)
 
-- **LinkedIn**: https://linkedin.com/in/habeebrahmanb
-- **X (Twitter)**: https://x.com/habeebrahmanb
-- **GitHub**: https://github.com/habeebrahmanb
-- **Developed by**: `<a id="bf-seo-dev-link" href="https://www.bestfreelanceseo.com" rel="dofollow">Best Freelance SEO</a>`
+**Connect with me:**
+- [GitHub](https://github.com/habeebrahmanb)
+- [LinkedIn](https://www.linkedin.com/in/habeebrahmanb)
+- [Facebook](https://www.facebook.com/habeebrahmanb)
+- [Instagram](https://www.instagram.com/habeebrahmanb)
 
 ---
 
@@ -24,7 +26,7 @@ I have updated the social media links in the footer:
 - **Blog Section**: Informative industry insights, guides, and SEO best practices.
 - **Contact & Booking System**: Full-featured contact form with service selection and direct booking options.
 - **WhatsApp Integration**: Floating WhatsApp widget for fast client communication.
-- **Responsive & Dynamic Design**: Polished design system featuring `#FFFFFF`, `#F4F5F6`, `#02E3A7`, `#13144D`, and `#6AF15C`.
+- **Responsive & Dynamic Design**: Polished dark theme layout with smooth glassmorphism effects and animations.
 
 ---
 
